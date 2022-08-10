@@ -24,13 +24,25 @@ class _MyAppState extends State<MyApp> {
           title: const Text('App Title'),
         ),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              setState(() {
-                buttonName = 'Clicked';
-              });
-            },
-            child: Text(buttonName),
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    buttonName = 'Clicked';
+                  });
+                },
+                child: Text(buttonName),
+              ),
+              ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    buttonName = 'Clicked';
+                  });
+                },
+                child: Text(buttonName),
+              ),
+            ],
           ),
         ),
         bottomNavigationBar: BottomNavigationBar(
