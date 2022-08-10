@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         body: Center(
           child: ElevatedButton(
             onPressed: () {
-              print('Print something');
+              buttonName = 'Clicked';
             },
             child: Text(buttonName),
           ),
