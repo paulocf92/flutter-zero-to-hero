@@ -54,7 +54,8 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 )
-              : const SizedBox(),
+              : Image.network(
+                  'https://www.finnishcottage.nl/wp-content/uploads/aurora-borealis.jpg'),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
