@@ -54,8 +54,7 @@ class _MyAppState extends State<MyApp> {
                     ],
                   ),
                 )
-              : Image.network(
-                  'https://www.finnishcottage.nl/wp-content/uploads/aurora-borealis.jpg'),
+              : Image.asset('images/starry_sky.jpg'),
         ),
         bottomNavigationBar: BottomNavigationBar(
           items: const [
