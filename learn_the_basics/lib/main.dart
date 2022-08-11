@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'second_page/second_page.dart';
 
 void main() {
   runApp(MyApp());
@@ -104,17 +105,6 @@ class _FirstPageState extends State<FirstPage> {
           });
         },
       ),
-    );
-  }
-}
-
-class SecondPage extends StatelessWidget {
-  const SecondPage({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(),
     );
   }
 }
