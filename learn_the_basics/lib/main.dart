@@ -1,78 +1,28 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
-  MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String buttonName = 'Click';
-  int currentIndex = 0;
-
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
+      title: 'Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
       home: Scaffold(
         appBar: AppBar(
-          title: const Text('App Title'),
+          title: const Text('Title'),
         ),
         body: Center(
-          child: currentIndex == 0
-              ? Container(
-                  color: Colors.red,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          foregroundColor: Colors.white,
-                          backgroundColor: Colors.orange,
-                        ),
-                        onPressed: () {
-                          setState(() {
-                            buttonName = 'Clicked';
-                          });
-                        },
-                        child: Text(buttonName),
-                      ),
-                      ElevatedButton(
-                        onPressed: () {
-                          setState(() {
-                            buttonName = 'Clicked';
-                          });
-                        },
-                        child: Text(buttonName),
-                      ),
-                    ],
-                  ),
-                )
-              : Image.asset('images/starry_sky.jpg'),
-        ),
-        bottomNavigationBar: BottomNavigationBar(
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home),
-              label: 'Home',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.settings),
-              label: 'Settings',
-            ),
-          ],
-          currentIndex: currentIndex,
-          onTap: (int index) {
-            setState(() {
-              currentIndex = index;
-            });
-          },
+          child: ElevatedButton(
+            onPressed: () {},
+            child: const Text('Press'),
+          ),
         ),
       ),
     );
