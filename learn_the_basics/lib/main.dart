@@ -14,17 +14,45 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Title'),
-        ),
-        body: Center(
-          child: ElevatedButton(
-            onPressed: () {},
-            child: const Text('Press'),
-          ),
+      home: const FirstPage(),
+    );
+  }
+}
+
+class FirstPage extends StatelessWidget {
+  const FirstPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Title'),
+      ),
+      body: Center(
+        child: ElevatedButton(
+          onPressed: () {
+            Navigator.of(context).push(
+              MaterialPageRoute(
+                builder: (BuildContext context) {
+                  return const SecondPage();
+                },
+              ),
+            );
+          },
+          child: const Text('Press'),
         ),
       ),
+    );
+  }
+}
+
+class SecondPage extends StatelessWidget {
+  const SecondPage({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(),
     );
   }
 }
