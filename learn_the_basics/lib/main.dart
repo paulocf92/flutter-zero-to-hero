@@ -24,9 +24,8 @@ class _MyAppState extends State<MyApp> {
           title: const Text('App Title'),
         ),
         body: Center(
-          child: SizedBox(
-            width: double.infinity,
-            height: double.infinity,
+          child: Container(
+            color: Colors.red,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
