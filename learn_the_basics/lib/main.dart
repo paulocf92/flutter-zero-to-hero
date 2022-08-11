@@ -31,6 +31,7 @@ class FirstPage extends StatefulWidget {
 class _FirstPageState extends State<FirstPage> {
   String buttonName = 'Click';
   int currentIndex = 0;
+  bool _isClicked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -73,7 +74,17 @@ class _FirstPageState extends State<FirstPage> {
                   ],
                 ),
               )
-            : Image.asset('images/starry_sky.jpg'),
+            : GestureDetector(
+                child: _isClicked
+                    ? Image.asset('images/starry_sky.jpg')
+                    : Image.network(
+                        'https://thumbs.dreamstime.com/b/aurora-borealis-acima-em-montanha-de-neve-na-praia-skagsanden-lofoten-nas-ilhas-norway-171472776.jpg'),
+                onTap: () {
+                  setState(() {
+                    _isClicked = !_isClicked;
+                  });
+                },
+              ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
