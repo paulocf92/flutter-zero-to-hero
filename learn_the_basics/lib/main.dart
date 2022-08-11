@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:learn_the_basics/home_page.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatefulWidget {
@@ -12,30 +13,11 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  bool _themeSwitched = false;
-
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return const MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        primarySwatch: _themeSwitched ? Colors.yellow : Colors.pink,
-      ),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('My First App'),
-        ),
-        body: Center(
-          child: GestureDetector(
-            child: Image.asset('images/win.png'),
-            onTap: () {
-              setState(() {
-                _themeSwitched = !_themeSwitched;
-              });
-            },
-          ),
-        ),
-      ),
+      home: HomePage(),
     );
   }
 }
