@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+        backgroundColor: Colors.deepOrangeAccent,
         body: Center(
           child: Image.asset("images/welcome.png"),
         ),
