@@ -26,6 +26,18 @@ class MyApp extends StatelessWidget {
             Center(
               child: Image.asset("images/welcome.png"),
             ),
+            OutlinedButton(
+              onPressed: () {},
+              style: OutlinedButton.styleFrom(
+                side: const BorderSide(
+                  color: Colors.white,
+                  width: 2.0,
+                ),
+                foregroundColor: Colors.white,
+                minimumSize: const Size(200.0, 40.0),
+              ),
+              child: const Text('Sign In'),
+            ),
           ],
         ),
       ),
