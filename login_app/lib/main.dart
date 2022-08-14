@@ -27,7 +27,9 @@ class MyApp extends StatelessWidget {
               child: Image.asset("images/welcome.png"),
             ),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () {
+                print('Outlined Button');
+              },
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(
                   color: Colors.white,
@@ -39,7 +41,9 @@ class MyApp extends StatelessWidget {
               child: const Text('Sign In'),
             ),
             TextButton(
-              onPressed: () {},
+              onPressed: () {
+                print('Text Button');
+              },
               style: TextButton.styleFrom(
                 foregroundColor: Colors.deepOrangeAccent,
                 backgroundColor: Colors.white,
