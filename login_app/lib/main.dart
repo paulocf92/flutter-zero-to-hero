@@ -16,7 +16,13 @@ class MyApp extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            const Text("WELCOME"),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: const [
+                Icon(Icons.coffee_rounded),
+                Text("WELCOME"),
+              ],
+            ),
             Center(
               child: Image.asset("images/welcome.png"),
             ),
