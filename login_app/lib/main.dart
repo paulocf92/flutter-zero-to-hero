@@ -38,6 +38,15 @@ class MyApp extends StatelessWidget {
               ),
               child: const Text('Sign In'),
             ),
+            TextButton(
+              onPressed: () {},
+              style: TextButton.styleFrom(
+                foregroundColor: Colors.deepOrangeAccent,
+                backgroundColor: Colors.white,
+                minimumSize: const Size(200.0, 40.0),
+              ),
+              child: const Text('Register'),
+            ),
           ],
         ),
       ),
