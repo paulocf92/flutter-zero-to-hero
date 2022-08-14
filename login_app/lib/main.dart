@@ -20,6 +20,9 @@ class MyApp extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
                 Icon(Icons.coffee_rounded),
+                SizedBox(
+                  width: 10.0,
+                ),
                 Text("WELCOME"),
               ],
             ),
