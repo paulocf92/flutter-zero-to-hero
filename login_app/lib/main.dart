@@ -19,11 +19,17 @@ class MyApp extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: const [
-                Icon(Icons.coffee_rounded),
+                Icon(
+                  Icons.coffee_rounded,
+                  color: Colors.white,
+                ),
                 SizedBox(
                   width: 10.0,
                 ),
-                Text("WELCOME"),
+                Text(
+                  "WELCOME",
+                  style: TextStyle(color: Colors.white),
+                ),
               ],
             ),
             Center(
