@@ -28,7 +28,12 @@ class MyApp extends StatelessWidget {
                 ),
                 Text(
                   "WELCOME",
-                  style: TextStyle(color: Colors.white),
+                  style: TextStyle(
+                    color: Colors.white,
+                    letterSpacing: 2.0,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
                 ),
               ],
             ),
