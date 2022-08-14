@@ -13,8 +13,14 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.deepOrangeAccent,
-        body: Center(
-          child: Image.asset("images/welcome.png"),
+        body: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            const Text("WELCOME"),
+            Center(
+              child: Image.asset("images/welcome.png"),
+            ),
+          ],
         ),
       ),
     );
