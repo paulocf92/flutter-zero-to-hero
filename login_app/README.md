@@ -1,16 +1,22 @@
 # login_app
 
-A new Flutter project.
+<img src="./.github/app.png" width="200"/>
 
-## Getting Started
+This project focus on building the UI through the following widgets:
+* Layout
+  * Scaffold - wraps a page's content structure
+  * SafeArea - wraps content within visible area, i.e. ignoring phone's top/bottom spacings
+  * SingleChildScrollView - allows scrolling content vertically
+  * Center - center content
+  * Column - lay out content vertically
+  * Row - lay out content horizontally
+  * SizedBox - add spacing either vertically or horizontally
 
-This project is a starting point for a Flutter application.
+* Widgets
+  * Text - text with customizable style
+  * Icon - material UI collection of icons with customizable style
+  * Image.asset - image loaded locally
+  * OutlinedButton - button with a border
+  * TextButton - regular button
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The challenge is to reproduce a simple Travel App with a suggested UI.
