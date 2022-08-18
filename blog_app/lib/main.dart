@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -18,8 +20,8 @@ class MyApp extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SizedBox(height: 20),
-                  Text(
+                  const SizedBox(height: 20),
+                  const Text(
                     "WELCOME TO THE BLOG",
                     style: TextStyle(
                         letterSpacing: 2,
@@ -27,18 +29,29 @@ class MyApp extends StatelessWidget {
                         fontSize: 25),
                   ),
                   Image.asset("images/welcome.png"),
+                  ElevatedButton(
+                    onPressed: () {},
+                    style: ElevatedButton.styleFrom(
+                      backgroundColor: Colors.blueGrey[900],
+                      minimumSize: const Size(250, 45),
+                      elevation: 0,
+                    ),
+                    child: const Text('Sign In'),
+                  ),
+                  const SizedBox(height: 10),
                   TextButton(
                     style: TextButton.styleFrom(
-                        backgroundColor: Colors.blueGrey[100],
-                        foregroundColor: Colors.blueGrey[900],
-                        minimumSize: Size(250, 45),
-                        elevation: 0),
+                      backgroundColor: Colors.blueGrey[100],
+                      foregroundColor: Colors.blueGrey[900],
+                      minimumSize: const Size(250, 45),
+                      elevation: 0,
+                    ),
                     onPressed: () {
                       print("Register");
                     },
-                    child: Text("Register"),
+                    child: const Text("Register"),
                   ),
-                  SizedBox(height: 20),
+                  const SizedBox(height: 20),
                 ],
               ),
             ),
