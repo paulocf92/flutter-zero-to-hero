@@ -1,22 +1,39 @@
 import 'package:flutter/material.dart';
+import '../blog_post_page.dart';
 
-Widget widgetPost(
-        {required String imagePath,
-        required String title,
-        required String subtitle}) =>
+Widget widgetPost({
+  required String imagePath,
+  required String title,
+  required String subtitle,
+  required BuildContext context,
+}) =>
     Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-            color: Colors.black.withOpacity(0.05),
-          ),
-          height: 200.0,
-          width: double.infinity,
-          child: Image.asset(
-            imagePath,
-            fit: BoxFit.cover,
+        InkWell(
+          borderRadius: BorderRadius.circular(20.0),
+          onTap: () {
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => BlogPostPage(
+                    blogImage: imagePath,
+                    blogTitle: title,
+                    blogSubtitle: subtitle,
+                  ),
+                ));
+          },
+          child: Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              color: Colors.black.withOpacity(0.05),
+            ),
+            height: 200.0,
+            width: double.infinity,
+            child: Image.asset(
+              imagePath,
+              fit: BoxFit.cover,
+            ),
           ),
         ),
         const SizedBox(height: 10),

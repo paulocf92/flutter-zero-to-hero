@@ -2,26 +2,29 @@ import 'package:flutter/material.dart';
 import 'widgets/post.dart';
 
 class BlogPage extends StatelessWidget {
-  BlogPage({super.key, required this.dataFromLoginPage});
+  const BlogPage({super.key, required this.dataFromLoginPage});
   final String dataFromLoginPage;
 
-  final List<Widget> blogPosts = [
-    widgetPost(
-      imagePath: 'images/rich.png',
-      title: 'Top 10 Tips to retire at 40 years old',
-      subtitle: 'The best tips to retire early',
-    ),
-    widgetPost(
-      imagePath: 'images/house.png',
-      title: 'How to purchase a property in 5 steps',
-      subtitle: 'You must acknowledge this before shopping',
-    ),
-    widgetPost(
-      imagePath: 'images/apps.png',
-      title: '7 Apps to increase productivity',
-      subtitle: 'These apps will boost your daily tasks',
-    ),
-  ];
+  List<Widget> blogPosts({required BuildContext context}) => [
+        widgetPost(
+          imagePath: 'images/rich.png',
+          title: 'Top 10 Tips to retire at 40 years old',
+          subtitle: 'The best tips to retire early',
+          context: context,
+        ),
+        widgetPost(
+          imagePath: 'images/house.png',
+          title: 'How to purchase a property in 5 steps',
+          subtitle: 'You must acknowledge this before shopping',
+          context: context,
+        ),
+        widgetPost(
+          imagePath: 'images/apps.png',
+          title: '7 Apps to increase productivity',
+          subtitle: 'These apps will boost your daily tasks',
+          context: context,
+        ),
+      ];
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +50,7 @@ class BlogPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              ...blogPosts,
+              ...blogPosts(context: context),
               TextButton(
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.blueGrey[900],
