@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'widgets/post.dart';
 
 class BlogPage extends StatelessWidget {
-  BlogPage({super.key});
+  BlogPage({super.key, required this.dataFromLoginPage});
+  final String dataFromLoginPage;
 
   final List<Widget> blogPosts = [
     widgetPost(
@@ -28,9 +29,9 @@ class BlogPage extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: AppBar(
         centerTitle: true,
-        title: const Text(
-          'The Blog',
-          style: TextStyle(
+        title: Text(
+          dataFromLoginPage,
+          style: const TextStyle(
             color: Colors.black,
             fontWeight: FontWeight.bold,
             letterSpacing: 2.0,

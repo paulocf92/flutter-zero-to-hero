@@ -28,7 +28,9 @@ class LoginPage extends StatelessWidget {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => BlogPage(),
+                        builder: (context) => BlogPage(
+                          dataFromLoginPage: 'The Blog',
+                        ),
                       ),
                     );
                   },
