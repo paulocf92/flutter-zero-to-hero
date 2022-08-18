@@ -52,6 +52,13 @@ class BlogPage extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
+            const SizedBox(
+              width: 50.0,
+              child: Divider(
+                color: Colors.black,
+                thickness: 5,
+              ),
+            ),
           ],
         ),
       ),
