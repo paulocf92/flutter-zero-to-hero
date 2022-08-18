@@ -21,6 +21,17 @@ class BlogPage extends StatelessWidget {
         elevation: 0,
         iconTheme: const IconThemeData(color: Colors.black),
       ),
+      body: Column(
+        children: [
+          Container(
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20.0),
+              color: Colors.black.withOpacity(0.05),
+            ),
+            child: Image.asset('images/rich.png'),
+          ),
+        ],
+      ),
     );
   }
 }
