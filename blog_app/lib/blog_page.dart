@@ -147,7 +147,7 @@ class BlogPage extends StatelessWidget {
                   elevation: 0,
                 ),
                 onPressed: () {
-                  print("Sign Out");
+                  Navigator.pop(context);
                 },
                 child: const Text("Sign Out"),
               ),
