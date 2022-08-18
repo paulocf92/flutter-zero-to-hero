@@ -20,17 +20,31 @@ Widget widgetPost(
           ),
         ),
         const SizedBox(height: 10),
-        Text(
-          title,
-          style: const TextStyle(
-            fontWeight: FontWeight.bold,
-            fontSize: 18,
-          ),
-        ),
-        Text(
-          subtitle,
-          style: const TextStyle(
-            fontSize: 16,
+        InkWell(
+          borderRadius: BorderRadius.circular(10.0),
+          onTap: () {
+            print(title);
+          },
+          child: SizedBox(
+            width: double.infinity,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 18,
+                  ),
+                ),
+                Text(
+                  subtitle,
+                  style: const TextStyle(
+                    fontSize: 16,
+                  ),
+                ),
+              ],
+            ),
           ),
         ),
         const SizedBox(
