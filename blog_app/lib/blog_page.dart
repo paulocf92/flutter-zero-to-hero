@@ -129,6 +129,28 @@ class BlogPage extends StatelessWidget {
                 ),
               ),
               const SizedBox(height: 20.0),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.blueGrey[900],
+                  minimumSize: const Size(double.infinity, 45),
+                  elevation: 0,
+                ),
+                onPressed: () {
+                  print("Terms and Conditions");
+                },
+                child: const Text("Terms and Conditions"),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                  foregroundColor: Colors.red,
+                  minimumSize: const Size(double.infinity, 45),
+                  elevation: 0,
+                ),
+                onPressed: () {
+                  print("Sign Out");
+                },
+                child: const Text("Sign Out"),
+              ),
             ],
           ),
         ),
