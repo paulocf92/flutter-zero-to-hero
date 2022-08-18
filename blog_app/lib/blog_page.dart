@@ -28,9 +28,21 @@ class BlogPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              widgetPost1(),
-              widgetPost2(),
-              widgetPost3(),
+              widgetPost(
+                imagePath: 'images/rich.png',
+                title: 'Top 10 Tips to retire at 40 years old',
+                subtitle: 'The best tips to retire early',
+              ),
+              widgetPost(
+                imagePath: 'images/house.png',
+                title: 'How to purchase a property in 5 steps',
+                subtitle: 'You must acknowledge this before shopping',
+              ),
+              widgetPost(
+                imagePath: 'images/apps.png',
+                title: '7 Apps to increase productivity',
+                subtitle: 'These apps will boost your daily tasks',
+              ),
               TextButton(
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.blueGrey[900],
