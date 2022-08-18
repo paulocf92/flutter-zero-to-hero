@@ -46,10 +46,7 @@ class BlogPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                children: List.generate(
-                    blogPosts.length, (index) => blogPosts[index]),
-              ),
+              ...blogPosts,
               TextButton(
                 style: TextButton.styleFrom(
                   foregroundColor: Colors.blueGrey[900],
