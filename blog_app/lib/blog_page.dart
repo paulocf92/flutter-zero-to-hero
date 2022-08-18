@@ -2,7 +2,25 @@ import 'package:flutter/material.dart';
 import 'widgets/post.dart';
 
 class BlogPage extends StatelessWidget {
-  const BlogPage({super.key});
+  BlogPage({super.key});
+
+  final List<Widget> blogPosts = [
+    widgetPost(
+      imagePath: 'images/rich.png',
+      title: 'Top 10 Tips to retire at 40 years old',
+      subtitle: 'The best tips to retire early',
+    ),
+    widgetPost(
+      imagePath: 'images/house.png',
+      title: 'How to purchase a property in 5 steps',
+      subtitle: 'You must acknowledge this before shopping',
+    ),
+    widgetPost(
+      imagePath: 'images/apps.png',
+      title: '7 Apps to increase productivity',
+      subtitle: 'These apps will boost your daily tasks',
+    ),
+  ];
 
   @override
   Widget build(BuildContext context) {
@@ -28,20 +46,9 @@ class BlogPage extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              widgetPost(
-                imagePath: 'images/rich.png',
-                title: 'Top 10 Tips to retire at 40 years old',
-                subtitle: 'The best tips to retire early',
-              ),
-              widgetPost(
-                imagePath: 'images/house.png',
-                title: 'How to purchase a property in 5 steps',
-                subtitle: 'You must acknowledge this before shopping',
-              ),
-              widgetPost(
-                imagePath: 'images/apps.png',
-                title: '7 Apps to increase productivity',
-                subtitle: 'These apps will boost your daily tasks',
+              Column(
+                children: List.generate(
+                    blogPosts.length, (index) => blogPosts[index]),
               ),
               TextButton(
                 style: TextButton.styleFrom(
