@@ -21,6 +21,7 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   int currentPage = 0;
+  List<bool?> boolList = List.generate(10, (index) => false);
 
   @override
   Widget build(BuildContext context) {
@@ -57,8 +58,31 @@ class _QuizPageState extends State<QuizPage> {
                 ],
               ),
             )
-          : Container(
-              child: Text(score.toString()),
+          : SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Check only yes tile',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  const Spacer(),
+                  ...List.generate(
+                    boolList.length,
+                    (index) => CheckboxListTile(
+                      value: boolList[index],
+                      onChanged: (checked) {
+                        setState(() {
+                          boolList[index] = checked;
+                        });
+                      },
+                      title: Text('Yes'),
+                    ),
+                  ),
+                  const Spacer(),
+                ],
+              ),
             ),
     );
   }
