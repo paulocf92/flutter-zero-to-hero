@@ -9,6 +9,15 @@ class QuizPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My Quiz'),
       ),
+      body: SizedBox(
+        width: double.infinity,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: const [
+            Text('Select the red square'),
+          ],
+        ),
+      ),
     );
   }
 }
