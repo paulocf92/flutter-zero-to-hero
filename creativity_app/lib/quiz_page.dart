@@ -10,15 +10,18 @@ class TileInfo {
   Color color;
 }
 
-List<TileInfo> tileInfoList = [
-  TileInfo(title: 'Blue', color: Colors.blue),
-];
-
 class QuizPage extends StatelessWidget {
   const QuizPage({super.key});
 
   @override
   Widget build(BuildContext context) {
+    List<TileInfo> tileInfoList = [
+      TileInfo(title: 'Red', color: Colors.red),
+      TileInfo(title: 'Blue', color: Colors.blue),
+      TileInfo(title: 'Green', color: Colors.green),
+      TileInfo(title: 'Orange', color: Colors.orange),
+    ];
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('My Quiz'),
