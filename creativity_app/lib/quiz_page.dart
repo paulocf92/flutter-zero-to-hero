@@ -1,5 +1,19 @@
 import 'package:flutter/material.dart';
 
+class TileInfo {
+  TileInfo({
+    required this.title,
+    required this.color,
+  });
+
+  String title;
+  Color color;
+}
+
+List<TileInfo> tileInfoList = [
+  TileInfo(title: 'Blue', color: Colors.blue),
+];
+
 class QuizPage extends StatelessWidget {
   const QuizPage({super.key});
 
@@ -16,8 +30,11 @@ class QuizPage extends StatelessWidget {
           children: [
             const Text('Select the red square'),
             ...List.generate(
-              4,
-              (index) => _customListTile(title: 'Red', color: Colors.red),
+              tileInfoList.length,
+              (index) => _customListTile(
+                title: tileInfoList[index].title,
+                color: tileInfoList[index].color,
+              ),
             ),
           ],
         ),
