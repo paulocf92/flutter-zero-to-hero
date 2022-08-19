@@ -10,8 +10,20 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: const Text('Creativity Quiz'),
       ),
-      body: Center(
-        child: Image.asset('images/bull.png'),
+      body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          Center(
+            child: Image.asset('images/bull.png'),
+          ),
+          const SizedBox(
+            height: 20.0,
+          ),
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('Take the quiz'),
+          ),
+        ],
       ),
     );
   }
