@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 class TileInfo {
@@ -21,7 +23,8 @@ class QuizPage extends StatefulWidget {
 
 class _QuizPageState extends State<QuizPage> {
   int currentPage = 0;
-  List<bool?> boolList = List.generate(10, (index) => false);
+  List<bool?> boolToShow = List.generate(10, (index) => Random().nextBool());
+  List<bool?> boolCheckList = List.generate(10, (index) => false);
 
   @override
   Widget build(BuildContext context) {
@@ -69,15 +72,15 @@ class _QuizPageState extends State<QuizPage> {
                   ),
                   const Spacer(),
                   ...List.generate(
-                    boolList.length,
+                    boolCheckList.length,
                     (index) => CheckboxListTile(
-                      value: boolList[index],
+                      value: boolCheckList[index],
                       onChanged: (checked) {
                         setState(() {
-                          boolList[index] = checked;
+                          boolCheckList[index] = checked;
                         });
                       },
-                      title: Text('Yes'),
+                      title: Text(boolToShow[index]! ? 'YES' : 'NO'),
                     ),
                   ),
                   const Spacer(),
