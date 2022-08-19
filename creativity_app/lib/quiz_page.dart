@@ -12,8 +12,15 @@ class TileInfo {
 
 int score = 0;
 
-class QuizPage extends StatelessWidget {
+class QuizPage extends StatefulWidget {
   const QuizPage({super.key});
+
+  @override
+  State<QuizPage> createState() => _QuizPageState();
+}
+
+class _QuizPageState extends State<QuizPage> {
+  int currentPage = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -28,22 +35,31 @@ class QuizPage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('My Quiz'),
       ),
-      body: SizedBox(
-        width: double.infinity,
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            const Text('Select the red square'),
-            ...List.generate(
-              tileInfoList.length,
-              (index) => _customListTile(
-                title: tileInfoList[index].title,
-                color: tileInfoList[index].color,
+      body: currentPage == 0
+          ? SizedBox(
+              width: double.infinity,
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  const Text(
+                    'Select the red square',
+                    style: TextStyle(fontSize: 25),
+                  ),
+                  const Spacer(),
+                  ...List.generate(
+                    tileInfoList.length,
+                    (index) => _customListTile(
+                      title: tileInfoList[index].title,
+                      color: tileInfoList[index].color,
+                    ),
+                  ),
+                  const Spacer(),
+                ],
               ),
+            )
+          : Container(
+              child: Text(score.toString()),
             ),
-          ],
-        ),
-      ),
     );
   }
 
@@ -56,9 +72,14 @@ class QuizPage extends StatelessWidget {
         tileColor: color,
         onTap: () {
           if (color == Colors.red) {
-            score = score + 1;
-            print('Score: $score');
+            score = 1;
+          } else {
+            score = 0;
           }
+
+          setState(() {
+            currentPage++;
+          });
         },
       );
 }
