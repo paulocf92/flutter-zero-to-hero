@@ -10,6 +10,9 @@ class HomePage extends StatelessWidget {
         centerTitle: true,
         title: const Text('Creativity Quiz'),
       ),
+      body: Center(
+        child: Image.asset('images/bull.png'),
+      ),
     );
   }
 }
