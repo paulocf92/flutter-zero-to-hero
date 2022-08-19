@@ -62,40 +62,57 @@ class _QuizPageState extends State<QuizPage> {
                 ],
               ),
             )
-          : SizedBox(
-              width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Check only yes tile',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                  const Spacer(),
-                  ...List.generate(
-                    boolCheckList.length,
-                    (index) {
-                      for (int i = 0; i < boolCheckList.length; i++) {
-                        if (boolToShow[index] != boolCheckList[index]) {
-                          matched = false;
-                        }
-                      }
-                      return CheckboxListTile(
-                        value: boolCheckList[index],
-                        onChanged: (checked) {
+          : currentPage == 1
+              ? SizedBox(
+                  width: double.infinity,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      const Text(
+                        'Check only yes tile',
+                        style: TextStyle(fontSize: 25),
+                      ),
+                      const Spacer(),
+                      ...List.generate(
+                        boolCheckList.length,
+                        (index) {
+                          for (int i = 0; i < boolCheckList.length; i++) {
+                            if (boolToShow[index] != boolCheckList[index]) {
+                              matched = false;
+                            }
+                          }
+                          return CheckboxListTile(
+                            value: boolCheckList[index],
+                            onChanged: (checked) {
+                              setState(() {
+                                boolCheckList[index] = checked;
+                              });
+                            },
+                            title: Text(boolToShow[index]! ? 'YES' : 'NO'),
+                          );
+                        },
+                      ),
+                      TextButton(
+                        onPressed: () {
                           setState(() {
-                            boolCheckList[index] = checked;
+                            if (matched) {
+                              score++;
+                            }
+                            currentPage++;
                           });
                         },
-                        title: Text(boolToShow[index]! ? 'YES' : 'NO'),
-                      );
-                    },
+                        child: const Text('Finish'),
+                      ),
+                      const Spacer(),
+                    ],
                   ),
-                  Text(matched ? 'This is RIGHT' : 'This is false'),
-                  const Spacer(),
-                ],
-              ),
-            ),
+                )
+              : Center(
+                  child: Text(
+                    'Score: $score',
+                    style: const TextStyle(fontSize: 30),
+                  ),
+                ),
     );
   }
 
