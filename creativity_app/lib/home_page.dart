@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'quiz_page.dart';
+
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
@@ -20,7 +22,13 @@ class HomePage extends StatelessWidget {
             height: 20.0,
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: ((context) => const QuizPage()),
+                ),
+              );
+            },
             child: const Text('Take the quiz'),
           ),
         ],
