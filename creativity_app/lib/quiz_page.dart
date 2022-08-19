@@ -28,6 +28,7 @@ class _QuizPageState extends State<QuizPage> {
 
   @override
   Widget build(BuildContext context) {
+    bool matched = true;
     List<TileInfo> tileInfoList = [
       TileInfo(title: 'Red', color: Colors.red),
       TileInfo(title: 'Blue', color: Colors.blue),
@@ -73,16 +74,24 @@ class _QuizPageState extends State<QuizPage> {
                   const Spacer(),
                   ...List.generate(
                     boolCheckList.length,
-                    (index) => CheckboxListTile(
-                      value: boolCheckList[index],
-                      onChanged: (checked) {
-                        setState(() {
-                          boolCheckList[index] = checked;
-                        });
-                      },
-                      title: Text(boolToShow[index]! ? 'YES' : 'NO'),
-                    ),
+                    (index) {
+                      for (int i = 0; i < boolCheckList.length; i++) {
+                        if (boolToShow[index] != boolCheckList[index]) {
+                          matched = false;
+                        }
+                      }
+                      return CheckboxListTile(
+                        value: boolCheckList[index],
+                        onChanged: (checked) {
+                          setState(() {
+                            boolCheckList[index] = checked;
+                          });
+                        },
+                        title: Text(boolToShow[index]! ? 'YES' : 'NO'),
+                      );
+                    },
                   ),
+                  Text(matched ? 'This is RIGHT' : 'This is false'),
                   const Spacer(),
                 ],
               ),
