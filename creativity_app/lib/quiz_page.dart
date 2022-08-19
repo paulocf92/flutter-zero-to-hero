@@ -15,10 +15,10 @@ class QuizPage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             const Text('Select the red square'),
-            _customListTile(title: 'Red', color: Colors.red),
-            _customListTile(title: 'Blue', color: Colors.blue),
-            _customListTile(title: 'Green', color: Colors.green),
-            _customListTile(title: 'Orange', color: Colors.orange),
+            ...List.generate(
+              4,
+              (index) => _customListTile(title: 'Red', color: Colors.red),
+            ),
           ],
         ),
       ),
