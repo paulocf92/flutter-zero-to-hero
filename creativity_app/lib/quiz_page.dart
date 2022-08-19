@@ -10,6 +10,8 @@ class TileInfo {
   Color color;
 }
 
+int score = 0;
+
 class QuizPage extends StatelessWidget {
   const QuizPage({super.key});
 
@@ -52,6 +54,11 @@ class QuizPage extends StatelessWidget {
       ListTile(
         title: Text(title),
         tileColor: color,
-        // onTap: () {},
+        onTap: () {
+          if (color == Colors.red) {
+            score = score + 1;
+            print('Score: $score');
+          }
+        },
       );
 }
