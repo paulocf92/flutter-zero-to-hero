@@ -43,23 +43,34 @@ class _QuizPageState extends State<QuizPage> {
       body: currentPage == 0
           ? SizedBox(
               width: double.infinity,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  const Text(
-                    'Select the red square',
-                    style: TextStyle(fontSize: 25),
-                  ),
-                  const Spacer(),
-                  ...List.generate(
-                    tileInfoList.length,
-                    (index) => _customListTile(
-                      title: tileInfoList[index].title,
-                      color: tileInfoList[index].color,
+              child: DecoratedBox(
+                decoration: const BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage('images/time.png'),
+                      fit: BoxFit.fitWidth,
+                      colorFilter: ColorFilter.linearToSrgbGamma()),
+                ),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    const Text(
+                      'Select the red square',
+                      style: TextStyle(fontSize: 25),
                     ),
-                  ),
-                  const Spacer(),
-                ],
+                    const Spacer(),
+                    ...List.generate(
+                      tileInfoList.length,
+                      (index) => Container(
+                        color: tileInfoList[index].color,
+                        child: _customListTile(
+                          title: tileInfoList[index].title,
+                          color: tileInfoList[index].color,
+                        ),
+                      ),
+                    ),
+                    const Spacer(),
+                  ],
+                ),
               ),
             )
           : currentPage == 1
@@ -89,6 +100,9 @@ class _QuizPageState extends State<QuizPage> {
                               });
                             },
                             title: Text(boolToShow[index]! ? 'YES' : 'NO'),
+                            tileColor: boolToShow[index] == boolCheckList[index]
+                                ? Colors.green
+                                : Colors.red,
                           );
                         },
                       ),
@@ -107,10 +121,19 @@ class _QuizPageState extends State<QuizPage> {
                     ],
                   ),
                 )
-              : Center(
-                  child: Text(
-                    'Score: $score',
-                    style: const TextStyle(fontSize: 30),
+              : SizedBox(
+                  width: double.infinity,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      Image.asset('images/brain.png'),
+                      const SizedBox(height: 20.0),
+                      Text(
+                        'Score: $score',
+                        style: const TextStyle(fontSize: 30),
+                      )
+                    ],
                   ),
                 ),
     );
