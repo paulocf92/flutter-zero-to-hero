@@ -13,27 +13,25 @@ class QuizPage extends StatelessWidget {
         width: double.infinity,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
-          children: const [
-            Text('Select the red square'),
-            ListTile(
-              title: Text('Red'),
-              tileColor: Colors.red,
-            ),
-            ListTile(
-              title: Text('Blue'),
-              tileColor: Colors.blue,
-            ),
-            ListTile(
-              title: Text('Green'),
-              tileColor: Colors.green,
-            ),
-            ListTile(
-              title: Text('Orange'),
-              tileColor: Colors.orange,
-            ),
+          children: [
+            const Text('Select the red square'),
+            _customListTile(title: 'Red', color: Colors.red),
+            _customListTile(title: 'Blue', color: Colors.blue),
+            _customListTile(title: 'Green', color: Colors.green),
+            _customListTile(title: 'Orange', color: Colors.orange),
           ],
         ),
       ),
     );
   }
+
+  Widget _customListTile({
+    required String title,
+    required Color color,
+  }) =>
+      ListTile(
+        title: Text(title),
+        tileColor: color,
+        // onTap: () {},
+      );
 }
